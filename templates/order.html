@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dookan.com: Your Order</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" media="screen" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.shop.js"></script>
+<style>
+    #nav-logo
+    {	
+        padding: 10px 20px 0 25px;
+        position: relative;
+        width: 150px;
+    }
+    #nav-logo .nav-logo-link
+    {
+        background: transparent url('logo.png') no-repeat top left ;
+        background-size: 90px;
+        width: 150px;
+        height: 50px;
+        display: block;
+    }
+    
+    .nav-logo-link{
+        background-color:#7364a7; 
+        border:none; 
+        color:white; 
+        margin-top: 5px; 
+        margin-right: 10px; 
+        padding: 6px;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+
+<body id="checkout-page">
+
+<div id="site">
+    <header id="masthead">
+        <div id="nav-logo" class="float-left">
+			<a href="land-3.html" class="nav-logo-link">
+		  <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 80px; width: 160px; padding-bottom: 40x; margin-bottom: 40px; margin-top: -80px; margin-left: -60px;">	
+		 </a>
+		 </div>
+    </header>
+    <div id="content">
+        <h1 style="margin-top: -50px;">Your Order</h1>
+            <table id="checkout-cart" class="shopping-cart">
+              <thead>
+                <tr>
+                    <th scope="col">Item</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+              
+              </tbody>
+            </table>
+         <div id="pricing">
+            
+            <p id="shipping">
+                <strong>Shipping</strong>: <span id="sshipping"></span>
+            </p>
+            
+            <p id="sub-total">
+                <strong>Total</strong>: <span id="stotal"></span>
+            </p>
+         </div>
+         
+         <div id="user-details">
+            <h2>Your Data</h2>
+            <div id="user-details-content"></div>
+         </div>
+         
+         
+         
+         
+<form id="paypal-form" action="" method="post">
+    <input type="hidden" name="cmd" value="_cart" />
+    <input type="hidden" name="upload" value="1" />
+    <input type="hidden" name="business" value="" />
+        
+    <input type="hidden" name="currency_code" value="" />
+    <input type="submit" id="paypal-btn" class="btn" value="Pay with PayPal" />
+</form>
+         
+         
+    </div>
+    
+    
+
+</div>
+
+
+
+</body>
+</html>

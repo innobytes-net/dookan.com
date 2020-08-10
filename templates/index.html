@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Add to Cart Page</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}" media="screen" type="text/css" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script type="text/javascript" src=""></script>
+<style>
+	header
+{
+	background-color: white;
+    height: 10px;
+    width: 100%;
+    font-family: Roboto;
+    margin-: 0px;
+}
+.dropdown-menu
+{
+	background-color: #c34ff1;
+}
+
+.nav-left
+{
+	position:relative; 
+	float: left;   /* for lwft nav, float shld be kept left*/
+	width: auto ;
+	display: inline-block;
+	padding-right: 90px;
+}
+
+.nav-right
+{	
+	margin-top: 0px;
+	position:relative; 
+	float: right;  /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	
+}
+.nav-item a{
+	color: #FFFFFF;
+}
+#nav-logo
+{	
+	padding: 10px 20px 0 25px;
+	position: relative;
+	width: 150px;
+}
+#nav-logo .nav-logo-link
+{
+	background: transparent url('logo.png') no-repeat top left ;
+	background-size: 90px;
+	width: 150px;
+	height: 50px;
+	display: block;
+}
+
+.nav-logo-link{
+	background-color:#7364a7; 
+    border:none; 
+    color:white; 
+	margin-top: 5px; 
+	margin-right: 10px; 
+    padding: 6px;
+    border-radius: 5px;
+}
+li a:hover:not(.active) {
+	background-color: #a39ac7;
+	color: white;
+  }
+.navbar-nav > li{
+	margin-left:20px;
+	margin-right:20px;
+  }
+  
+ .nav-right-cat
+{
+	position:absolute; 
+	float: right;   /* for rgt nav, float shld be kept rigt*/
+	width: auto ;
+	display: inline-block;
+	padding-top: 65px;
+	padding-left: 655px; 
+}
+
+@media (min-width: 1200px)
+{
+	.container
+	{
+		width: 1150px;
+		height: 320px;
+	}
+}
+footer{
+	color: white;
+     padding:50px 0px;
+     width:100%;
+     height:300px;
+     margin-bottom:5px;
+     margin-top: 0px;
+	 box-shadow: 0 50vh 0 50vh #1a152c;
+}	 
+div{
+    font-family: Roboto;
+}     
+
+</style>
+</head>
+
+<body>
+
+<div id="site">
+	<header id="masthead">
+		<div id="nav-logo" class="float-left">
+			<a href="land-3.html" class="nav-logo-link">
+		  <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 80px; width: 160px; padding-bottom: 40x; margin-bottom: 40px; margin-top: -80px; margin-left: -60px;">	
+		 </a>
+		 <nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; margin: 5px; margin-top: 90px;">
+			<button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			  <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+			</button>
+		  
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			  <ul class="navbar-nav mr-auto">
+				<li class="nav-item active">
+				  <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item dropdown">
+				  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					ALL	CATEGORIES
+				  </a>
+				  <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+					<a class="dropdown-item" href="#">Fruits</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Vegetables</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Grocery</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Daily Essentials</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Tools and Electricals</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Grooming Essentials</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Baby Essentials</a>
+					<div class="dropdown-divider"></div>
+					<a class="dropdown-item" href="#">Best Sellers</a>
+				  </div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#about-section">ABOUT US</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="history.html">PREVIOUS ORDERS</a>
+				  </li>
+				  <!--<li class="nav-item">
+					<a class="nav-link" href="#">PRODUCTS</a>
+				  </li>-->
+				  <li class="nav-item">
+					<a class="nav-link" href="#offers-section">OFFERS</a>
+				  </li>
+				  <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						LANGUAGE
+					  </a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+						<a class="dropdown-item" href="#">Hindi</a>
+						<div class="dropdown-divider"></div>
+						<a class="dropdown-item" href="#">English</a>
+					</div>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="#contact-section">CONTACT US</a>
+				  </li>
+				  <li class="nav-item">
+					<a class="nav-link" href="media.html">MEDIA</a>
+				  </li>
+			  </ul>
+			</div>
+		  </nav>
+		 </div>	
+		<!--<h1>Winery <span class="tagline">Wines for web developers since 1999</h1>-->
+			<h2 style="text-align: center; margin-left: 225px; margin-top: -100px;">Products</h2>
+			
+	</header>
+	<div id="content">
+		<div id="products">
+			<ul>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m4.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Black Jacket" data-price="5">
+						<h3 class="product-name">Black Jacket</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m1.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Classic Shirt" data-price="8">
+						<h3 class="product-name">Classic Shirt</h3>
+						<p class="product-price">&euro; 8</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-2">Quantity</label>
+								<input type="text" name="qty-2" id="qty-2" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/m2.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Classic Sweater" data-price="11">
+						<h3 class="product-name">Classic Sweater</h3>
+						<p class="product-price">&euro; 11</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-3">Quantity</label>
+								<input type="text" name="qty-3" id="qty-3" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				<br>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w1.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Cotton Sweater" data-price="5">
+						<h3 class="product-name">Cotton Sweater</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w2.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Summer T-Shirts" data-price="5">
+						<h3 class="product-name">Summer T-shirts</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+				<li>
+					<div class="product-image">
+						<img style="  height: 150px; width: 150px; border-radius: 50%;" src="{{url_for('static',filename='img/w3.jpg')}}" alt="" />
+					</div>
+					<div class="product-description" data-name="Summer Frock" data-price="5">
+						<h3 class="product-name">Summer Frock</h3>
+						<p class="product-price">&euro; 5</p>
+						<form class="add-to-cart" action="#" method="post">
+							<div>
+								<label for="qty-1">Quantity</label>
+								<input type="text" name="qty-1" id="qty-1" class="qty" value="1" />
+							</div>
+							<p><input type="submit" value="Add to cart" class="btn" onclick="myFunction()" /></p>
+						</form>
+					</div>
+				</li>
+
+
+			</ul>
+			<form action="cart.html">
+			<p style="text-align: center; margin-bottom: 20px; font-size: 18px; color: #1a152c" name="button"><input type="submit" value="Proceed" class="btn" /></p>
+		</div>
+	</div>
+	
+	
+
+</div>
+<script>
+function myFunction() {
+  alert("Added to Cart!");
+}
+</script>
+
+</body>
+</html>

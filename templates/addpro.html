@@ -1,0 +1,121 @@
+
+<html>
+    <head>
+        <title>Dookan.com</title>
+        <meta charset="utf-8">
+        <!-- for responsiveness -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/styling-3.css') }}">
+        <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Acme' rel='stylesheet'>
+        <link href='https://fonts.googleapis.com/css?family=Shadows Into Light' rel='stylesheet'>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div id="site">
+            <header id="masthead">
+            <br>
+            <br>
+            <br>
+            <br>
+                <header>
+                    <div id="nav-logo" class="float-left">
+            <a href="landing.html" class="nav-logo-link">
+         <img src="{{ url_for('static',filename='img/logo.png') }}" style="height: 80px; width: 160px; padding-bottom: 40x; margin-bottom: 40px; margin-top: -28px;"> </a>
+        </div>      
+    
+                    <nav class="navbar navbar-expand-lg " style="background-color:#7364a7; width: 100%; margin: 5px;">
+                        <button class="navbar-toggler" style="color: #7364a7;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon" style="color: #7364a7;"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        ALL	CATEGORIES
+                                    </a>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: #a39ac7;">
+                                    <a class="dropdown-item" href="#">Fruits</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Vegetables</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Grocery</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Daily Essentials</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Tools and Electricals</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Grooming Essentials</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Baby Essentials</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a class="dropdown-item" href="#">Best Sellers</a>
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#about-section">ABOUT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">PRODUCTS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">OFFERS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">LANGUAGE</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#contact-section">CONTACT US</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="media.html">MEDIA</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+            </header>
+        </div>
+        
+        <div style="margin-top: 100px;">
+        <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>product name</th>
+                <th>description</th>
+                <th>Category</th>
+                <th>Image</th>
+                <th>qty</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+                {% for row in value %}
+                    <tr>
+                        <td>{{row[0]}}</td>
+                        <td>{{row[1]}}</td>
+                        <td>{{row[2]}}</td>
+                        <td>{{row[3]}}</td>
+                        <td>{{row[4]}}</td>
+                        <td>{{row[5]}}</td>
+                        <!-- <td>{{row[6]}}</td> -->
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        </div>
+    </body>
+</html>
